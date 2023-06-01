@@ -1,0 +1,171 @@
+body {
+  padding: 20px;
+  line-height: 1.35;
+  color: #1a1a1a;
+  font-family: sans-serif;
+  font-size: 14px;
+}
+
+header {
+  border-bottom: #1a1a1a solid 1px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+h1,
+h2 {
+  font-weight: bold;
+}
+
+footer {
+  padding: 20px 0;
+  border-top: #aaa solid 1px;
+  text-align: center;
+  color: #aaa;
+}
+section {
+  /* 가로로 나열 */
+  display: flex;
+  margin-bottom: 20px;
+}
+article {
+  padding: 20px;
+  /* width: 25%; */
+  overflow: hidden;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.content {
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+}
+
+article:hover .content {
+  height: 100%;
+  opacity: 1;
+  transition: all 2s;
+}
+
+h2 {
+  margin-bottom: 10px;
+  font-size: 1.4em;
+}
+
+article p {
+  padding-bottom: 10px;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.bar {
+  background-color: #f6f6f6;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.bar div {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: skyblue;
+  z-index: 1;
+  width: 0;
+}
+
+.bar span {
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  background-color: black;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+}
+
+.school {
+  width: 100%;
+  border: 1px solid;
+  border-collapse: collapse;
+}
+.school th,
+.school td {
+  border: 1px solid;
+}
+
+.info {
+  border-right: none;
+  border-left: none;
+  border-top: none;
+  border-bottom: none;
+}
+
+article:hover .content {
+  padding-bottom: 40px;
+}
+/* 가로모드 */
+@media only screen and (orientation: landscape) {
+  section {
+    flex-direction: row;
+  }
+
+  article {
+    width: 35%;
+  }
+
+  .bar {
+    height: 7px;
+    width: 100%;
+  }
+
+  .bar div {
+    height: 12px;
+  }
+  article:hover .bar div {
+    width: 100%;
+    transition: width 2s;
+  }
+
+  article:hover .bar span {
+    left: 100%;
+    transform: left 2.4s;
+  }
+}
+
+/* 세로모드 */
+@media only screen and (orientation: portrait), (max-width: 808px) {
+  section {
+    flex-direction: column;
+  }
+  article {
+    width: 100%;
+  }
+
+  .bar {
+    width: 12px;
+    height: 100%;
+  }
+  .bar div {
+    width: 12px;
+  }
+
+  article:hover .bar div {
+    height: 100%;
+    transition: height 4s;
+  }
+
+  article:hover .bar span {
+    top: 100%;
+    transform: top 4.5s;
+  }
+}
